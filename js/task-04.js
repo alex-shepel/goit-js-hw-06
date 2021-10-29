@@ -6,9 +6,7 @@ const refs = {
 
 let counterValue = 0;
 
-const refreshIface = value => {
-	refs.spanValue.textContent = value;
-};
+const refreshIface = value => (refs.spanValue.textContent = value);
 
 const onClickBtnDecrement = () => refreshIface((counterValue -= 1));
 const onClickBtnIncrement = () => refreshIface((counterValue += 1));
