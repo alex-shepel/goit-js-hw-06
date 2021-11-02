@@ -3,9 +3,9 @@ const refs = {
 };
 
 const onBlurInput = event => {
-	event.currentTarget.value.length < refs.input.dataset.length
-		? (refs.input.className = "invalid")
-		: (refs.input.className = "valid");
+	const lenExpect = parseInt(event.currentTarget.value.length);
+	const lenActual = parseInt(refs.input.dataset.length);
+	refs.input.className = lenExpect === lenActual ? "valid" : "invalid";
 };
 
 refs.input.addEventListener("blur", onBlurInput);
